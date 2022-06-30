@@ -16,7 +16,10 @@ namespace EchoDyeMod
                 return;
             }
 
-            // EchoEffect = EchoDyeMod.Instance.Assets.Request<Effect>("Assets/Effects/EchoShader/EchoEffect");
+            EchoEffect = EchoDyeMod.Instance.Assets.Request<Effect>(
+                "Assets/Effects/EchoShader/EchoEffect",
+                AssetRequestMode.ImmediateLoad
+            );
         }
 
         internal static void Unload()

@@ -10,6 +10,11 @@ namespace EchoDyeMod
 
         internal static EchoDyeMod Instance { get; private set; } = null;
 
+        public EchoDyeMod()
+        {
+            ContentAutoloadingEnabled = true;
+        }
+
         public override void Load()
         {
             Instance = this;
@@ -19,7 +24,6 @@ namespace EchoDyeMod
                 return;
             }
 
-            // ContentAutoloadingEnabled = true;
             EffectManager.Load();
         }
 

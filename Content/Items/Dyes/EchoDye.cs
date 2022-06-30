@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
 using Terraria;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -21,12 +20,7 @@ namespace EchoDyeMod.Content.Items.Dyes
             GameShaders.Armor.BindShader(
                 Item.type,
                 new ArmorShaderData(
-                    new Ref<Effect>(
-                        Mod.Assets.Request<Effect>(
-                            "Assets/Effects/EchoShader/EchoEffect",
-                            AssetRequestMode.ImmediateLoad
-                        ).Value
-                    ),
+                    new Ref<Effect>(EffectManager.EchoEffect.Value),
                     "EchoDyePass"
                 )
             );
