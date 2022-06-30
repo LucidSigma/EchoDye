@@ -1,0 +1,3 @@
+displayName = Echo Dye
+author = LucidSigma
+version = 0.1
