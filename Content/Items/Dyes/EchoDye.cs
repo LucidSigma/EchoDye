@@ -36,7 +36,5 @@ namespace EchoDyeMod.Content.Items.Dyes
 
             Item.dye = dye;
         }
-
-        // TODO: Localisation.
     }
 }
