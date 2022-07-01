@@ -37,11 +37,6 @@ namespace EchoDyeMod.Content.Items.Dyes
             Item.dye = dye;
         }
 
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            tooltips.Add(new TooltipLine(Mod, nameof(EchoDye), "Makes equipment invisible"));
-        }
-
         // TODO: Localisation.
     }
 }
