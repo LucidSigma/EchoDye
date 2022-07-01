@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -12,7 +13,7 @@ namespace EchoDyeMod.Content.Items.Dyes
     {
         public override void SetStaticDefaults()
         {
-            if (Main.dedServ)
+            if (Main.dedServ || !EffectManager.EchoEffect.HasValue)
             {
                 return;
             }
@@ -20,8 +21,8 @@ namespace EchoDyeMod.Content.Items.Dyes
             GameShaders.Armor.BindShader(
                 Item.type,
                 new ArmorShaderData(
-                    new Ref<Effect>(EffectManager.EchoEffect.Value),
-                    "EchoDyePass"
+                    new Ref<Effect>(EffectManager.EchoEffect.Value.Effect.Value),
+                    EffectManager.EchoEffect.Value.PassName
                 )
             );
 
@@ -30,11 +31,17 @@ namespace EchoDyeMod.Content.Items.Dyes
 
         public override void SetDefaults()
         {
-            // TODO: Rarity, sell price, et cetera.
             int dye = Item.dye;
-            Item.CloneDefaults(ItemID.GelDye);
+            Item.CloneDefaults(ItemID.FogboundDye);
 
             Item.dye = dye;
         }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            tooltips.Add(new TooltipLine(Mod, nameof(EchoDye), "Makes equipment invisible"));
+        }
+
+        // TODO: Localisation.
     }
 }

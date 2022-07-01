@@ -6,7 +6,7 @@ namespace EchoDyeMod
     public class EchoDyeMod
         : Mod
     {
-        public const string AssetPath = $"{nameof(EchoDyeMod)}/Assets/";
+        public const string AssetPath = "Assets/";
 
         internal static EchoDyeMod Instance { get; private set; } = null;
 
