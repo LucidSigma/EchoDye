@@ -1,3 +1,6 @@
 A small mod that adds an invisible dye.
 
 It can be purchased from the Dye Trader in a graveyard biome.
+
+This mod is open source and is available here: https://github.com/LucidSigma/EchoDye
+If you have anything you wish to contribute or want to fork this mod, you're more than welcome to.
