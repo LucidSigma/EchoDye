@@ -1,9 +1,10 @@
-﻿Mods.EchoDyeMod: {
-    ItemName: {
-        EchoDye: Echo Dye
-    }
-
-    ItemTooltip: {
-        EchoDye: Makes equipment invisible
-    }
+Mods: {
+	EchoDyeMod: {
+		Items: {
+			EchoDye: {
+				DisplayName: Echo Dye
+				Tooltip: Makes equipment invisible
+			}
+		}
+	}
 }

@@ -8,19 +8,16 @@ namespace EchoDyeMod.NPCs
     public class EchoDyeGlobalNPC
         : GlobalNPC
     {
-        public override void SetupShop(int type, Chest shop, ref int nextSlot)
+        public override void ModifyShop(NPCShop shop)
         {
-            Player player = Main.LocalPlayer;
-
-            switch (type)
+            switch (shop.NpcType)
             {
                 case NPCID.DyeTrader:
-                    if (player.ZoneGraveyard)
-                    {
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<EchoDye>());
-                        ++nextSlot;
-                    }
+                    shop.Add(new Item(ModContent.ItemType<EchoDye>()), Condition.InGraveyard);
 
+                    break;
+
+                default:
                     break;
             }
         }
